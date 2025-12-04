@@ -2,6 +2,7 @@
 
 /* IMPORTED FONTS*/
 /* IMPORT "INTER" FROM GOOGLE FONTS" */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&display=swap');
 .seymour-one-regular {
   font-family: "Seymour One", sans-serif;
   font-weight: 400;
@@ -70,66 +71,100 @@ table {
 
 /* GLOBAL STYLES (MOBILE FIRST (SMALL) */
 
-h1 {
-
+html {
+    font-size: 16px;
 }
 
-h2 {
-
+h1 h2 h3 {
+    font-family: var(--font);
+    font-weight: 700;
 }
 
-h3 {
-
+p {
+    font-size: 0.75rem;
+    line-height: 1.5;
 }
 
+a {
+    text-decoration: none;
+}
+
+/* header and nav */
 header{
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 1rem;
+    background-color: var(--black);
+    border-bottom: 2px solid var(--charcoal);
+}
 
+header::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 4px;
+    background-color: var(--blue);
+}
+
+/* hide the img */
+header img {
+    display: none;
+}
+
+h1 {
+    position: relative;
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--blue);
+    padding-left: 2.5rem;
+}
+
+h1::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 2rem;
+    height: 2rem;
+    transform: translate(-50%);
+    background: url('images/vanguard-logo.svg') no-repeat center/contain;
+    animation: floatLogo 3s ease-in-out infinite alternate;
+}
+@keyframes floatLogo {
+    0% {transform: translateY(-55%);}
+    100%{ transform: translateY(-45%);}
 }
 
 nav{
-
+    position: relative;
 }
 
-.innovation{
-
+nav h2{
+    position: absolute;
+    left: -9999px;
 }
 
-.our{
-
+nav a {
+    display: none;
 }
 
-.offer {
-
+nav::after {
+    content: "";
+    display: block;
+    width: 1.5rem;
+    height: 0;
+    border-top: 2px solid var(--blue);
+    border-bottom: 2px solid var(--blue);
+    box-shadow: 0 6px 0 var(--blue);
 }
-
-.offer div {
-
-}
-
-.results {
-
-}
-
-table {
-
-}
-
-#barchart {
-
-}
-
-.contact {
-
-}
-
-form {
-
-}
-
-footer {
-
-}
-/* MIN-WIDTH OF THE PAGE SHOULD NOT GO BELOW 400PX */
+/* MIN-WIDTH OF THE PAGE SHOULD NOT 
+GO BELOW 400PX */
 
 /* ADD A DIV WITH THE CLASS OF CONTAINER TO EVERY CONTENT CONTAINER THIS IS ALLOW THE BASE ELEMENTS TO BE 100% WIDTH, BUT CONSTRAIN THE ACTUAL CONTENT TO 90% */
 .container {
@@ -139,7 +174,7 @@ footer {
 }
 
 /* ADD TO "INNOVATION & INVESTMENT SECTION (Photo by Kevin Matos on Unsplash) */
- {
+.innovation {
     background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('images/vanguard-hero.jpg') no-repeat center center/cover;
     height: 80vh;
     display: grid;
