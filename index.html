@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
 <!-- ADD META TAG REQUIRED TO MAKE PAGE RESPONSIVE-->
+    <meta name="viewport" content="with=device-width, initial-scale=1.0">
     <meta name="description" content="Vaanguard- Leading the Future of Success. Premier strategic investment and business acceleration firm for high-growth enterprises.">
     <meta name="keywords" content="business growth, strategic investment, mergers, corporate consulting, digital transformation">
 <!-- ADD META TAG FOR AUTHOR AND YOUR NAME-->
@@ -17,19 +18,21 @@
 
     <!-- HEADER -->
     <header>
+        <img alt="vanguard logo" src="images/vanguard-logo.svg">
         <h1>Vanguard</h1>
         <!-- NAV -->
         <nav>
             <h2>Main Navigation</h2>
-            <a>About</a>
-            <a>Services</a>
-            <a>Contact</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
         </nav>
     </header>
     
          
         <!-- INNOVATION -->
         <section class="innovation">
+            <img alt="city skape" src="images/vanguard-hero.jpg">
             <h2>Innovation & Investment</h2>
 
             <p>We empower businesses to lead the future with high-impact strategies, market intelligence, and financial solutions that drive success. </p>
@@ -37,14 +40,14 @@
         </section>
         
         <!--OUR EXPERTISE -->
-        <section class="our">
+        <section class="our" id="about">
             <h2>Our Expertise. Your Edge.</h2>
             <p>We redefine success by leveraging AI-driven analytics, market intelligence, and high-yield investment strategies to propel businesses forward. 
             Whether you're looking to scale, optimize, or dominate, our strategic expertise delivers results.'</p>
         </section>
         
         <!--WHAT WE OFFER -->
-        <section class="offer">
+        <section class="offer" id="services">
             <h2>What We Offer</h2>
 
             <div>
@@ -139,7 +142,7 @@
 
         </section>
         
-        <section class="contact">
+        <section class="contact" id="contact">
             <h2>Contact Us</h2>
             <p>Want to take your business to the next level? Get in touch with our elite team today.</p>
 
@@ -148,8 +151,8 @@
                 <label for="name">Name</label><br>
                 <input type="text" id="name" name="name"><br>
 
-                <label for="address"> Address</label><br>
-                <input type="text" id="address" name="address"><br>
+                <label for="email"> Email Address</label><br>
+                <input type="email" id="email" name="email"><br>
                 
                 <label for="compName">Company Name</label><br>
                 <input type="text" id="compName" name="compName"><br>
@@ -158,7 +161,7 @@
                 <input type="text" id="ind" name="ind"><br>
 
                 <label for="help">How can we help you?</label><br>
-                <input type="text" id="help" name="help"><br>
+                <textarea id="help" name="help"></textarea>
                 
                 <button type="submit">Submit</button><br>  
             </form>
