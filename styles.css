@@ -363,7 +363,6 @@ header:hover {
 
 .results p {
     font-size: 1rem;
-    
     text-align: left;
     padding-left: 0.75rem;
     max-width: 40rem;
@@ -482,7 +481,7 @@ header h1::before {
 
 .contact p {
     font-size: 0.9rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 .contact .container {
@@ -499,14 +498,13 @@ header h1::before {
 .contact form label {
     font-size: 0.85rem;
     display: block;
-    margin-bottom: 0.1rem;
 }
 
 .contact input,
 .contact textarea {
     width: 100%;
-    padding: 0.6rem;
-    margin-bottom: 0.75rem;
+    padding: 0.5rem;
+    margin-bottom: 0.3rem;
     border-radius: 4px;
     border: 2px solid var(--blue);
     background-color: var(--white);
@@ -563,20 +561,321 @@ footer a {
 }
 
 /* MEDIA QUERIES (MEDIUM) */ 
+@media (min-width: 800px) {
 
-    #results {
-        grid-template-columns: 1fr 1fr;
+    #header {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 3rem;
+        position: relative;
     }
-    .results-container {
+
+    #header h1 {
+        padding-right: 10rem;
+    }
+
+    #nav {
+        position: static;
+        top: auto;
+        right: auto;
         flex-direction: row;
-        justify-content: space-between;
+        align-items: center;
+        margin-left: 3rem;  
     }
-    .results-table {
-        width: 50%;
+
+    #nav nav {
+        width: auto;
+        height: auto;
+        padding-top: 0;
+        gap: 1rem;
+        padding-top: 0;
+        cursor: default;
+        gap: 2.5rem;
     }
-    .bar-chart {
-        width: 50%;
+
+    #nav nav::before {
+        content: none;
+        box-shadow: none;
+    }
+
+    #nav a {
+        display: inline-block;
+        color: var(--white);
+        padding-left:0;
+        border-radius: 0;
+        font-size: 1rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        font-weight: 800;
+    }
+
+    #nav nav:hover {
+        padding-top: 0;
+        flex-direction: row;
+        gap: 2rem;
+    }
+
+    #nav nav a:hover {
+        background: none;
+        color: var(--blue);
+    }
+
+    header:hover {
+        padding-bottom: 1.4rem;
+        transition: padding 0.25s ease;
+    }
+
+    .offer .container {
+        display: grid;
+        grid-template-columns:  repeat(2, minmax(0,1fr));
+        gap: 1.25rem;
+        margin: 0 auto 3rem;
+        padding: 0 1.5rem 0;
+    }
+
+    .offer h2 {
+        grid-column: 1/-1;
+        
+        margin-bottom: 1.5rem;
+        font-size: 2rem;
+        font-weight: 900;
+    }
+
+    .results .container {
+        display: grid;
+        grid-template-columns:  1fr 1fr;
+        grid-template-areas: 
+            "title   title"
+            "desc    desc"
+            "profits growth"
+            "table   chart";
+        column-gap: 2.5rem;
+        row-gap: 1.5rem;
+        align-items: start;
+        width: 100%;
+    }
+
+    .results h2 {
+        grid-area: title;
+        text-align: left;
+        margin: 0 0 0.75rem 0.75rem;
+    }
+    
+    .results p {
+        grid-area: desc;
+        margin: 0 0 1.5rem 0.75rem;
+        max-width: 46rem;
+    }
+
+    .results h3:nth-of-type(1) {
+        grid-area: profits;
+        margin: 0 0 1rem 0.75rem;
+        text-align: left;
+    }
+
+    .results h3:nth-of-type(2) {
+        grid-area: growth;
+        margin:  0 0 1rem 0;
+        text-align: left;
+    }
+
+    .results table {
+        grid-area:  table;
+        width: 100%;
+        margin: 0 0 2rem 0.75rem;
+    }
+
+    #bar-chart {
+        grid-area: chart;
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
     }
 
 
+}
 /* MEDIA QUERIES (LARGE) */
+@media (min-width: 1024px) {
+
+    .our .container,
+    .offer .container,
+    .results .container,
+    .contact .container {
+        width: 98%;
+        max-width:2400px;
+        margin: 0 auto;
+    }
+
+    .contact .container {
+        width: 98%;
+        max-width: 1600px;
+        margin: 0 auto;
+    }
+
+    .info h2 {
+        font-size: 2.4rem;
+
+    }
+
+    .info p {
+        font-size: 1.05rem;
+    }
+
+    #request {
+        max-width: 820px;
+        margin: 0 auto;
+    }
+
+    #request button {
+        padding: 0.9rem 2.4rem;
+        font-size: 1rem;
+    }
+
+   
+    .offer .container {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0,1fr));
+        gap: 1.75rem;
+        padding: 0 1.5rem 3rem;
+    }
+
+    .offer .container > div {
+        margin: 0;
+        padding: 1.5rem 2rem;
+        min-height: 180px;
+    }
+
+    .results .container {
+        display: grid;
+        grid-template-columns:minmax(0, 1.1fr) minmax(0, 1.1fr);
+        grid-template-areas: 
+            "title   title"
+            "desc    desc"
+            "profits growth"
+            "table   chart";
+        column-gap: 4rem;
+        row-gap: 2rem;
+        align-items: flex-start;
+        padding: 0 1.5rem 3rem;
+    }
+
+    .results h2 {
+        grid-area: title;
+        text-align: left;
+        margin: 0 0 0.75rem 0;
+    }
+
+    .results p {
+        grid-area: desc;
+        margin: 0 0 1.5rem 0;
+        max-width: none;
+        padding-left: 0;
+    }
+
+    .results h3:nth-of-type(1) {
+        grid-area: profits;
+        margin:  0 0 1rem 0;
+        text-align: left;
+    }
+
+    .results h3:nth-of-type(2) {
+        grid-area: growth;
+        margin:  0 0 1rem 0;
+        text-align: left;
+    }
+
+    .results h3:nth-of-type(3) {
+        grid-area: table;
+        width: 100%;
+        margin: 0 0 2rem 0;
+    }
+
+    #bar-chart {
+        grid-area: chart;
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+    }
+
+    .contact .container {
+        max-width: 1100px;
+    }
+
+
+    .contact form {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto auto;
+        column-gap: 1.75rem;
+        row-gap: 1.5rem;
+        max-width: none;
+        margin: 0 auto;
+    }
+
+    .contact form label,
+    .contact form input,
+    .contact form textarea,
+    .contact form button {
+        margin-bottom: 0;
+        width: 100%;
+    }
+
+    .contact form label:nth-of-type(1){
+        grid-column: 1;
+        grid-row: 1;
+    }
+    .contact form input:nth-of-type(1) {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+     .contact form label:nth-of-type(2){
+        grid-column: 2;
+        grid-row: 1;
+    }
+    .contact form input:nth-of-type(2) {
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+    .contact form label:nth-of-type(3){
+        grid-column: 1;
+        grid-row: 3;
+    }
+    .contact form input:nth-of-type(3) {
+        grid-column: 1;
+        grid-row: 4;
+    }
+
+    .contact form label:nth-of-type(4){
+        grid-column: 2;
+        grid-row: 3;
+    }
+    .contact form input:nth-of-type(4) {
+        grid-column: 2;
+        grid-row: 4;
+    }
+
+    .contact form label:nth-of-type(5){
+        grid-column: 1;
+        grid-row: 5;
+    }
+    
+    .contact form textarea {
+        grid-column: 1;
+        grid-row: 6;
+        min-height: 180px;
+    }
+
+    .contact button {
+        grid-column: 2;
+        grid-row: 6;
+        max-height: 50px;
+        width: 220px;
+    }
+
+   
+    
+
+}
